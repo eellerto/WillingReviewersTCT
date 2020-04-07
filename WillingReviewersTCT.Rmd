@@ -44,7 +44,8 @@ colnames(willingreviewers) <-c("Person.ID",
                               "Full.Name",
                               "Institution",
                               "Country.Region",
-                              "Primary.E.mail.Address")
+                              "Primary.E.mail.Address",
+                              "Designation")
 
 
 
