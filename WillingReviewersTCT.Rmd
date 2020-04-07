@@ -33,11 +33,7 @@ library(DT)
 
 # Import & Tidy Reviewer Data.
 willingreviewers <- as_tibble(read.csv("willingreviewers.csv"))
-#willingreviewers.AE <- filter(willingreviewers, Person.Attribute.Type == "Willing Article Editor")
 willingreviewers <- filter(willingreviewers, Person.Attribute.Type == "Willing Reviewer")
-#willingreviewers.AE$Willing.AE <- "True"
-#illingreviewers.revi$Willing.Reviewer <- "True"
-#willingreviewers.AE <- select(willingreviewers.AE,-c(Person.Attribute, Person.Attribute.Type))
 willingreviewers <- select(willingreviewers,-c(Person.Attribute, Person.Attribute.Type))
 colnames(willingreviewers) <-c("Person.ID",
                               "Salutation",
@@ -51,24 +47,10 @@ colnames(willingreviewers) <-c("Person.ID",
 willingreviewers <- willingreviewers[!grepl("Ms", willingreviewers$Salutation),]
 willingreviewers <- willingreviewers[!grepl("Mr", willingreviewers$Salutation),]
 
-#willingreviewers <- full_join(willingreviewers.AE, willingreviewers.reviewers, by = c("Person.ID",
-                                                                                      #"Salutation",
-                                                                                      ##"Full.Name",
-                                                                                     # "Institution",
-                                                                                      #"Country.Region",
-                                                                                      #"Primary.E.mail.Address"))
+ 
 
 # Import & Tidy Reviewer Keywords.
 userkeywords <- as_tibble(read.csv("userkeywords.csv"))
-#userkeywords2 <- as_tibble(read.csv("userkeywords2.csv"))
-#userkeywords3 <- as_tibble(read.csv("userkeywords3.csv"))
-#userkeywords4 <- as_tibble(read.csv("userkeywords4.csv"))
-#userkeywords5 <- as_tibble(read.csv("userkeywords5.csv"))
-#userkeywords6 <- as_tibble(read.csv("userkeywords6.csv"))
-#userkeywords7 <- as_tibble(read.csv("userkeywords7.csv"))
-#userkeywords8 <- as_tibble(read.csv("userkeywords8.csv"))
-
-#userkeywords <-  userkeywords1
 
 colnames(userkeywords) <-c("Person.ID",
                             "Person.Attribute.Type",
