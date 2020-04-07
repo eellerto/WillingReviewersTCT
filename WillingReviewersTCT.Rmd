@@ -46,9 +46,10 @@ colnames(willingreviewers) <-c("Person.ID",
                               "Country.Region",
                               "Primary.E.mail.Address",
                               "Designation")
+#remove all Mr and Ms
 
-
-
+willingreviewers <- willingreviewers[!grepl("Ms", willingreviewers$Salutation),]
+willingreviewers <- willingreviewers[!grepl("Mr", willingreviewers$Salutation),]
 
 #willingreviewers <- full_join(willingreviewers.AE, willingreviewers.reviewers, by = c("Person.ID",
                                                                                       #"Salutation",
